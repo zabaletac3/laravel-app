@@ -122,7 +122,8 @@
                             <div class="text-muted text-center mt-1 mb-3"><small>Sign in with</small></div>
                         </div>
                         <div class="card-body px-lg-5 py-lg-5">
-                            <form role="form">
+                            <form role="form" action="/login" method="POST">
+                                @csrf
                                 <div class="form-group mb-3">
                                     <div class="input-group input-group-alternative">
                                         <div class="input-group-prepend">
