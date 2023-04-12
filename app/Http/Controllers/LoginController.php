@@ -15,6 +15,8 @@ class LoginController extends Controller
     } 
 
     public function login(Request $request) {
+
+        //Credentials
         $credentials = [
             "email" => $request->email,
             "password" => $request->password
@@ -24,11 +26,12 @@ class LoginController extends Controller
 
         if(Auth::attempt($credentials, $remember)){
 
+            //Login success
             $request->session()->regenerate();
-
             return redirect('/');
 
         } else {
+            //Login fail
             return redirect('login');
         }
     }

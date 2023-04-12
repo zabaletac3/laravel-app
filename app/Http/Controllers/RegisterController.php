@@ -33,7 +33,7 @@ class RegisterController extends Controller
             CURLOPT_CUSTOMREQUEST => "POST",
             CURLOPT_POSTFIELDS => json_encode([
                 'toNumber' => $request->input('phone'),
-                'sms' => 'Prueba 1',
+                'sms' => 'Welcome to the company',
                 'flash' => '0',
                 'sc' => '890202',
                 'request_dlvr_rcpt' => '0'
@@ -56,8 +56,9 @@ class RegisterController extends Controller
         } else {
             echo $response;
         }
-
-
+        
         return redirect('/login')->with('success', 'Usuario creado correctamente');
+
+        
     }
 }
